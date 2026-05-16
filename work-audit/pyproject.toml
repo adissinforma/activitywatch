@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "work-audit"
+version = "0.1.0"
+description = "Auditoría de trabajos y parte diario semi-automático sobre ActivityWatch"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MPL-2.0" }
+
+dependencies = [
+    "PyQt6>=6.6",
+    "winsdk>=1.0.0b10 ; sys_platform == 'win32'",
+    "pywin32>=306 ; sys_platform == 'win32'",
+    "mss>=9.0",
+    "Pillow>=10.0",
+    "openpyxl>=3.1",
+    "requests>=2.31",
+    "aw-client>=0.5.14",
+    "google-api-python-client>=2.100",
+    "google-auth-oauthlib>=1.2",
+    "google-auth-httplib2>=0.2",
+]
+
+[project.scripts]
+work-audit = "work_audit.__main__:main"
+
+[tool.setuptools]
+packages = ["work_audit", "work_audit.ui"]
