@@ -38,12 +38,33 @@ No modifica nada de ActivityWatch: usa su propia base de datos
 
 ## Instalación
 
+### Opción rápida (equipo con Python)
+
+Doble clic en **`Iniciar work-audit.bat`**: detecta Python, instala las
+dependencias en el primer arranque y abre la aplicación sin consola. Para que
+se abra sola al iniciar sesión, ejecuta una vez
+`python scripts/install_autostart.py`.
+
+### Opción manual
+
 ```sh
 cd work-audit
 pip install -e .
 python -m work_audit.db --init          # crea la base de datos
 python scripts/install_autostart.py     # abre el parte al iniciar sesión
 ```
+
+### Ejecutable independiente (equipo sin Python)
+
+Para distribuir la app a equipos que no tienen Python instalado:
+
+```sh
+pip install pyinstaller
+python scripts/build_exe.py             # genera dist/work-audit/work-audit.exe
+python scripts/build_exe.py --onefile   # o un único work-audit.exe
+```
+
+El `.exe` resultante no necesita Python ni dependencias en el equipo destino.
 
 ## Uso
 
