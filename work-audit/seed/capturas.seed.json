@@ -1,0 +1,30 @@
+{
+  "_descripcion": "Definiciones de regiones de pantalla a capturar por aplicación. Se entregan con la instalación y son comunes a todos los usuarios. La herramienta de marcado de regiones (region_trainer) escribe aquí.",
+  "_formato": {
+    "aplicacion": "nombre del proceso, p.ej. sage.exe",
+    "ruta": "ruta opcional del ejecutable",
+    "capturas[].nombre_campo": "identificador del campo, p.ej. codigo_empresa",
+    "capturas[].tipo": "uno de: codempresa | nomempresa | codigorelacion",
+    "capturas[].x/y/ancho/alto": "región relativa al área de cliente de la ventana",
+    "capturas[].ref_ancho/ref_alto": "tamaño de la ventana al marcar (para escalar)",
+    "capturas[].regex": "opcional; expresión para limpiar el texto OCR"
+  },
+  "_ejemplo": {
+    "aplicacion": "ejemplo.exe",
+    "ruta": "",
+    "capturas": [
+      {
+        "nombre_campo": "codigo_empresa",
+        "tipo": "codigorelacion",
+        "x": 120,
+        "y": 8,
+        "ancho": 90,
+        "alto": 22,
+        "ref_ancho": 1280,
+        "ref_alto": 800,
+        "regex": "\\d+"
+      }
+    ]
+  },
+  "aplicaciones": []
+}
